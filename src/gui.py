@@ -14,7 +14,6 @@ from rms import rms_scheduling
 from rr import rr_scheduling
 from sjf import sjf_scheduling
 
-
 class SchedulerGUI:
     def __init__(self, root):
         self.root = root
@@ -41,10 +40,20 @@ class SchedulerGUI:
         self.output_label = tk.Label(root, text="", fg="blue")
         self.output_label.pack(pady=5)
 
-    def run_selected_scheduler(self):
-        algorithm = self.selected_algorithm.get()
+    def get_flights_data(self):
+        """Simulates flight data for scheduling."""
+        return [
+            {"id": 1, "arrival": 3, "duration": 5, "priority": 2},
+            {"id": 2, "arrival": 1, "duration": 3, "priority": 1},
+            {"id": 3, "arrival": 2, "duration": 2, "priority": 3}
+        ]
 
-        # Map selection to the function
+    def run_selected_scheduler(self):
+        """Runs the selected scheduler with flight data."""
+        algorithm = self.selected_algorithm.get()
+        flights = self.get_flights_data()
+
+        # Mapping of scheduler functions
         scheduler_functions = {
             "FCFS": fcfs_scheduling,
             "EDF": edf_scheduling,
@@ -57,10 +66,9 @@ class SchedulerGUI:
 
         if algorithm in scheduler_functions:
             self.output_label.config(text=f"Running {algorithm} Scheduling...")
-            scheduler_functions[algorithm]()  # Call the selected scheduling function
+            scheduler_functions[algorithm](flights)  # ✅ Pass the required argument
         else:
             self.output_label.config(text="Invalid Selection")
-
 
 if __name__ == "__main__":
     root = tk.Tk()
