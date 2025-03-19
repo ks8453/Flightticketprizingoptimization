@@ -1,11 +1,11 @@
 import os
 from src.fcfs import fcfs_scheduling
-from src.edf import edf_schedule
-from src.mfq import mfq_schedule
-from src.priority import priority_schedule
-from src.rms import rms_schedule
-from src.rr import rr_schedule
-from src.sjf import sjf_schedule
+from src.edf import edf_scheduling
+from src.mfq import mfq_scheduling
+from src.priority import priority_scheduling
+from src.rms import rms_scheduling
+from src.rr import rr_scheduling
+from src.sjf import sjf_scheduling
 from src.gui import SchedulerGUI
 
 def main():
