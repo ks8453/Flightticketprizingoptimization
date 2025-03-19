@@ -6,7 +6,7 @@ from src.priority import priority_scheduling
 from src.rms import rms_scheduling
 from src.rr import rr_scheduling
 from src.sjf import sjf_scheduling
-from src.gui import SchedulerGUI
+from src.gui import TicketScheduler
 
 def main():
     print("Flight Ticket Pricing Optimization - Scheduler Selection")
