@@ -1,11 +1,13 @@
-import os
-from src.fcfs import fcfs_scheduling
-from src.edf import edf_scheduling
-from src.mfq import mfq_scheduling
-from src.priority import priority_scheduling
-from src.rms import rms_scheduling
-from src.rr import rr_scheduling
-from src.sjf import sjf_scheduling
+import sys
+sys.path.append("src")  # Ensure Python can find the modules
+
+from fcfs import fcfs_scheduling
+from edf import edf_scheduling
+from mfq import mfq_scheduling
+from priority import priority_scheduling
+from rms import rms_scheduling
+from rr import rr_scheduling
+from sjf import sjf_scheduling
 from src.gui import TicketScheduler
 
 def main():
