@@ -26,19 +26,19 @@ def main():
     ]
 
     if choice == 1:
-        schedule = fcfs_schedule(flights)
+        schedule = fcfs_scheduling(flights)
     elif choice == 2:
-        schedule = edf_schedule(flights)
+        schedule = edf_scheduling(flights)
     elif choice == 3:
-        schedule = mfq_schedule(flights)
+        schedule = mfq_scheduling(flights)
     elif choice == 4:
-        schedule = priority_schedule(flights)
+        schedule = priority_scheduling(flights)
     elif choice == 5:
-        schedule = rms_schedule(flights)
+        schedule = rms_scheduling(flights)
     elif choice == 6:
-        schedule = rr_schedule(flights, quantum=2)
+        schedule = rr_scheduling(flights, quantum=2)
     elif choice == 7:
-        schedule = sjf_schedule(flights)
+        schedule = sjf_scheduling(flights)
     else:
         print("Invalid choice.")
         return
@@ -47,7 +47,7 @@ def main():
     for flight in schedule:
         print(flight)
 
-    root = SchedulerGUI(schedule)
+    root = TicketScheduler(schedule)
     root.mainloop()
 
 if __name__ == "__main__":
