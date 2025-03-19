@@ -1,5 +1,5 @@
 import os
-from src.fcfs import fcfs_schedule
+from src.fcfs import fcfs_scheduling
 from src.edf import edf_schedule
 from src.mfq import mfq_schedule
 from src.priority import priority_schedule
